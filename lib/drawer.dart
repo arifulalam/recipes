@@ -9,12 +9,12 @@ Widget drawer(BuildContext context) {
       'icon': Icons.home,
       'method': Home(),
     },{
-      'name': "Account",
-      'icon': Icons.home,
+      'name': "About",
+      'icon': Icons.account_box_outlined,
       'method': About(),
     },{
-      'name': "Posts",
-      'icon': Icons.home,
+      'name': "Help",
+      'icon': Icons.help,
       'method': Help(),
     }
   ];
@@ -37,7 +37,16 @@ Widget drawer(BuildContext context) {
           ),
           child: Center(
             child: ListTile(
-              leading: Icon(Icons.account_circle, size: 70,),
+              leading: CircleAvatar(
+                //backgroundImage: AssetImage('assets/images/avatar.png',),
+                backgroundColor: Colors.transparent,
+                radius: 50,
+                child: Image(
+                  image: AssetImage('assets/images/avatar.png',),
+                  fit: BoxFit.contain,
+                  alignment: Alignment.center,
+                ),
+              ),
               title: Text(
                 'Ariful Alam',
                 style: TextStyle(
